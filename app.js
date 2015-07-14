@@ -17,7 +17,7 @@ router.get('/clockwork-bot', function(req, res){
       url: 'https://api.groupme.com/v3/bots/post',
       method: 'POST',
       json: {
-          "bot_id": "f9c260f4645a7b602e55d6b124",
+          "bot_id": lol,
           "text": req.query['text']
       }
     }, function(error, response, body){
