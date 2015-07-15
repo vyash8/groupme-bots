@@ -1,9 +1,10 @@
 {
     "name": "groupme-bots",
     "main": "server.js",
-    "devDependencies": {
+    "dependencies": {
         "express": "~4.13.1",
         "body-parser": "~1.13.2",
-        "request": "~2.58.0"
+        "request": "~2.58.0",
+        "throng": "^1.0.0"
     }
 }
