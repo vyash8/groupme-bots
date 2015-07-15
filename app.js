@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var throng = require('throng');
 
-var workers = process.env.WEB_CONCURRENCY || 1;
+var WORKERS = process.env.WEB_CONCURRENCY || 1;
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
@@ -41,5 +41,9 @@ throng(start, {
   lifetime: Infinity
 });
 
-app.listen(port);
-console.log('listening on ' + port);
+function start(){
+  app.listen(port);
+  console.log('listening on ' + port);
+}
+
+
