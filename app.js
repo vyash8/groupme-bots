@@ -24,8 +24,7 @@ router.post('/clockwork-bot', function(req, res){
           "text": "hello"
       }
     }, function(error, response, body){
-      console.log(response.statusCode);
-      console.log(error);
+        return {'message': 'message delivered'};
     })
 });
 
