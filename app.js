@@ -15,17 +15,17 @@ router.get('/', function(req, res){
 })
 
 router.post('/clockwork-bot', function(req, res){
-    console.log(req.query)
-    request({
-      url: 'https://api.groupme.com/v3/bots/post',
-      method: 'POST',
-      json: {
-          "bot_id": bot_id,
-          "text": "hello"
-      }
-    }, function(error, response, body){
-        return {'message': 'message delivered'};
-    })
+    console.log(req)
+    // request({
+    //   url: 'https://api.groupme.com/v3/bots/post',
+    //   method: 'POST',
+    //   json: {
+    //       "bot_id": bot_id,
+    //       "text": "hello"
+    //   }
+    // }, function(error, response, body){
+    //     return {'message': 'message delivered'};
+    // })
 });
 
 app.use('/api', router);
