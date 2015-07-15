@@ -2,17 +2,12 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var request = require('request');
-var throng = require('throng');
-
-var WORKERS = process.env.WEB_CONCURRENCY || 1;
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 var port = process.env.PORT || 8000;
-
 var router = express.Router();
-
 var bot_id = process.env.BOT_ID;
 
 router.get('/', function(req, res){
@@ -36,14 +31,8 @@ router.get('/clockwork-bot', function(req, res){
 
 app.use('/api', router);
 
-throng(start, {
-  workers: WORKERS,
-  lifetime: Infinity
-});
+app.listen(port);
+console.log('listening on ' + port);
 
-function start(){
-  app.listen(port);
-  console.log('listening on ' + port);
-}
 
 
