@@ -15,7 +15,8 @@ router.get('/', function(req, res){
 })
 
 router.post('/clockwork-bot', function(req, res){
-    console.log(req)
+    var query = req.body['text'];
+    console.log(/hello/.test(query));
     // request({
     //   url: 'https://api.groupme.com/v3/bots/post',
     //   method: 'POST',
