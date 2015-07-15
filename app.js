@@ -10,15 +10,20 @@ var port = process.env.PORT || 8000;
 
 var router = express.Router();
 
+var bot_id = process.env.BOT_ID;
+
+router.get('/', function(req, res){
+   res.json({ message: 'TESTING CALLBACK FROM GROUPME'})
+})
+
 router.get('/clockwork-bot', function(req, res){
     console.log(req.query)
-    res.json({ message: 'TESTING CALLBACK FROM GROUPME'})
     request({
       url: 'https://api.groupme.com/v3/bots/post',
       method: 'POST',
       json: {
-          "bot_id": lol,
-          "text": req.query['text']
+          "bot_id": bod_id,
+          "text": "hello"
       }
     }, function(error, response, body){
       console.log(response.statusCode);
