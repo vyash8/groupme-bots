@@ -1,7 +1,7 @@
 {
     "name": "groupme-bots",
     "main": "server.js",
-    "dependencies": {
+    "devDependencies": {
         "express": "~4.13.1",
         "body-parser": "~1.13.2",
         "request": "~2.58.0"
