@@ -14,7 +14,7 @@ router.get('/', function(req, res){
    res.json({ message: 'TESTING CALLBACK FROM GROUPME'})
 })
 
-router.post('/clockwork-bot', function(req, res){
+router.get('/clockwork-bot', function(req, res){
     console.log(req.query)
     request({
       url: 'https://api.groupme.com/v3/bots/post',
