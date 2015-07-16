@@ -24,12 +24,12 @@ router.post('/clockwork-bot', function(req, res){
 
     if (/#west/i.test(query)) {
         text = "320 S Beach Blvd, Anaheim, CA 92804";
-        postToBot(text)''
+        postToBot(text);
     }
 
     if (/#downtown/i.test(query)) {
         text = "225 S Philadelphia St, Anaheim, CA 92805";
-        postToBot(text)
+        postToBot(text);
     }
 
 });
