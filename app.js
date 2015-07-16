@@ -16,23 +16,38 @@ router.get('/', function(req, res){
 
 router.post('/clockwork-bot', function(req, res){
     var query = req.body['text'];
-    console.log(/#east/i.test(query));
-    // request({
-    //   url: 'https://api.groupme.com/v3/bots/post',
-    //   method: 'POST',
-    //   json: {
-    //       "bot_id": bot_id,
-    //       "text": "hello"
-    //   }
-    // }, function(error, response, body){
-    //     return {'message': 'message delivered'};
-    // })
+    var text = ""
+    if (/#east/i.test(query)) {
+        text = "8165 E Santa Ana Canyon Rd, Anaheim, CA 92808";
+        postToBot(text);
+    }
+
+    if (/#west/i.test(query)) {
+        text = "320 S Beach Blvd, Anaheim, CA 92804";
+        postToBot(text)''
+    }
+
+    if (/#downtown/i.test(query)) {
+        text = "225 S Philadelphia St, Anaheim, CA 92805";
+        postToBot(text)
+    }
+
 });
+
+function postToBot(text) {
+    request({
+    url: 'https://api.groupme.com/v3/bots/post',
+    method: 'POST',
+      json: {
+        "bot_id": bot_id,
+        "text": text
+      }
+    }, function(error, response, body){
+        return {'message': 'message delivered'};
+    })
+}
 
 app.use('/api', router);
 
 app.listen(port);
 console.log('listening on ' + port);
-
-
-
