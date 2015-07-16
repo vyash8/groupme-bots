@@ -36,14 +36,14 @@ router.post('/clockwork-bot', function(req, res){
 
 function postToBot(text) {
     request({
-    url: 'https://api.groupme.com/v3/bots/post',
-    method: 'POST',
+      url: 'https://api.groupme.com/v3/bots/post',
+      method: 'POST',
       json: {
         "bot_id": bot_id,
         "text": text
       }
     }, function(error, response, body){
-        return {'message': 'message delivered'};
+          return {'message': 'message delivered'};
     })
 }
 
